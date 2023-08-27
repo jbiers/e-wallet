@@ -9,27 +9,27 @@ import (
 )
 
 type Account struct {
-	ID        int32        `json:"id"`
+	ID        int64        `json:"id"`
 	Username  string       `json:"username"`
 	Type      string       `json:"type"`
 	Document  string       `json:"document"`
 	Email     string       `json:"email"`
 	Password  string       `json:"password"`
-	Balance   int32        `json:"balance"`
+	Balance   int64        `json:"balance"`
 	CreatedAt sql.NullTime `json:"created_at"`
 }
 
 type Entry struct {
-	ID        int32        `json:"id"`
-	Amount    int32        `json:"amount"`
-	AccountID int32        `json:"account_id"`
+	ID        int64        `json:"id"`
+	Amount    int64        `json:"amount"`
+	AccountID int64        `json:"account_id"`
 	CreatedAt sql.NullTime `json:"created_at"`
 }
 
 type Transaction struct {
-	ID         int32        `json:"id"`
-	Amount     int32        `json:"amount"`
-	SenderID   int32        `json:"sender_id"`
-	ReceiverID int32        `json:"receiver_id"`
+	ID         int64        `json:"id"`
+	Amount     int64        `json:"amount"`
+	SenderID   int64        `json:"sender_id"`
+	ReceiverID int64        `json:"receiver_id"`
 	CreatedAt  sql.NullTime `json:"created_at"`
 }

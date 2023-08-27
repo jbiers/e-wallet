@@ -1,26 +1,26 @@
 CREATE TABLE "accounts" (
-  "id" integer PRIMARY KEY,
+  "id" bigserial PRIMARY KEY,
   "username" varchar NOT NULL,
   "type" varchar NOT NULL,
   "document" varchar UNIQUE NOT NULL,
   "email" varchar UNIQUE NOT NULL,
   "password" varchar NOT NULL,
-  "balance" integer DEFAULT 0 NOT NULL,
+  "balance" bigint DEFAULT 0 NOT NULL,
   "created_at" timestamp DEFAULT (now())
 );
 
 CREATE TABLE "entries" (
-  "id" integer PRIMARY KEY,
-  "amount" integer NOT NULL,
-  "account_id" integer NOT NULL,
+  "id" bigserial PRIMARY KEY,
+  "amount" bigint NOT NULL,
+  "account_id" bigint NOT NULL,
   "created_at" timestamp DEFAULT (now())
 );
 
 CREATE TABLE "transactions" (
-  "id" integer PRIMARY KEY,
-  "amount" integer NOT NULL,
-  "sender_id" integer NOT NULL,
-  "receiver_id" integer NOT NULL,
+  "id" bigserial PRIMARY KEY,
+  "amount" bigint NOT NULL,
+  "sender_id" bigint NOT NULL,
+  "receiver_id" bigint NOT NULL,
   "created_at" timestamp DEFAULT (now())
 );
 
