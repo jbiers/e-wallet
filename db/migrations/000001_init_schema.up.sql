@@ -5,7 +5,8 @@ CREATE TABLE "accounts" (
   "document" varchar UNIQUE NOT NULL,
   "email" varchar UNIQUE NOT NULL,
   "password" varchar NOT NULL,
-  "balance" integer NOT NULL
+  "balance" integer DEFAULT 0 NOT NULL,
+  "created_at" timestamp DEFAULT (now())
 );
 
 CREATE TABLE "entries" (

@@ -13,4 +13,7 @@ migrate-up:
 migrate-down:
 	migrate -path db/migrations -database "postgresql://root:pass@localhost:5432/e-wallet?sslmode=disable" down
 
-.PHONY: local-postgres create-local-db drop-local-db migrate-up migrate-down
+sqlc:
+	sqlc generate
+
+.PHONY: local-postgres create-local-db drop-local-db migrate-up migrate-down sqlc

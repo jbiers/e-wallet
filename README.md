@@ -9,3 +9,5 @@
         docker run --name database -e POSTGRES_PASSWORD=pass -e POSTGRES_USER=root -p 5432:5432 -d postgres:15.4-alpine
         docker exec -it database psql -U root
     ```
+
+- direct SQL vs GORM vs SQLX vs SQLC
